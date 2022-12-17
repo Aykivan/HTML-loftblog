@@ -3,12 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Мой HTML</title>
+    <title>HTML | loftblog</title>
 </head>
 
 <body>
-    <h1 id="first-origin-link">Руководство для начинающих</h1>
-    <h2>Разметка страницы</h2>
+    <h1>Руководство для начинающих</h1>
+
+    <h2 id="first-origin-link">Разметка страницы</h2>
     <p>
         Теги разметки текста будут представлены ниже.
     <ul>
@@ -58,7 +59,6 @@
         <li>Третий</li>
     </ol>
     </p>
-
     <p>
         В нумерованных списках есть 3 атрибута:
     <ol start="2" reversed type="I">
@@ -67,6 +67,7 @@
         <li>type ='' задает вид нумерации, например I</li>
     </ol>
     </p>
+
     <h2>Ссылки</h2>
     <p>
         Для создания <a
@@ -110,6 +111,312 @@
             прировнять к атрибуту то имя, которое нам нужно.</li>
     </ol>
     </p>
+
+    <h2>Медиа</h2>
+    <img src="most-in-it.jpg" width="400" alt="Мост в IT">
+    <p>
+        Атрибуты src и alt являются обязательными, при использовании изображений. С помощью атрибута width можно задать
+        размер картинки, если мы не указываем единицы измерения, они по умолчанию будут в px.
+    </p>
+    <video width="400" height="240" controls>
+        <source src="" type="">
+        Видео не поддерживается.
+    </video>
+    <p>
+        С помощью тега video, мы можем добавить видео файл, он является парным тегом. Это сделано для того чтобы дать
+        возможность загружать видео разных форматов с помощью атрибута source, которые поддерживают разные браузеры. С
+        помощью атрибута type мы задаем формат видео.
+        И если мы хотим дать возможность управлять показом видео, необходимо добавить атрибут - controls.
+        Аналогично и аудиофайлами, только вместо тега video используется тег - audio.
+    </p>
+    <p>
+        Для ссылки на видео с youtube, необходимо скопировать специальную ссылку на самом хостинге. Атрибут
+        frameborder="10" задает обрамление для плеера.
+    </p>
+    <p>
+        <iframe width="400" height="240" src="https://www.youtube.com/embed/88XyQRPKrac" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </p>
+    <p>
+        С помощью тега iframe можно так же добавлять и карты.
+    </p>
+
+    <h2>Таблицы</h2>
+    <table border="1" width="500">
+        <tbody>
+            <thead>
+                <th>Заголовок 1</th>
+                <th>Заголовок 2</th>
+                <th>Заголовок 3</th>
+                <th>Заголовок 4</th>
+            </thead>
+            <tr>
+                <td>Строка 1</td>
+                <td>таблица</td>
+                <td>сложно</td>
+                <td>оформляется</td>
+            </tr>
+            <tr>
+                <td>Строка 2</td>
+                <td>для</td>
+                <td>видимости</td>
+                <td>разметки</td>
+            </tr>
+            <tr>
+                <td>Строка 3</td>
+                <td>необходимо</td>
+                <td>добавить</td>
+                <td>тег </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Итого</td>
+                <td>тег tfoot</td>
+                <td>нужен для</td>
+                <td>конца таб.</td>
+            </tr>
+        </tfoot>
+    </table>
+    <p>
+        Вся стилизация таблиц происходит через CSS, так как пока она нам не знакома, используем устаревший способ с
+        атрибутами. Тег окончания в основном необходим для браузера. В дальнейшем будет полезно для стилизации.
+        Атрибуты для обьединения ячеек: colspan="количество обьединенных ячеек" по длине и rowspan="по высоте".
+    </p>
+
+    <h2>Формы №1</h2>
+    <form action="" method="">
+        <label for="login">Логин: </label>
+        <input id="login" type="text" name="login" value="Ivan">
+
+        <br>
+        <br>
+
+        <label>Пароль:
+            <input type="password" name="passw">
+        </label>
+
+        <br>
+        <br>
+
+        <a href="#">Забыли пароль?</a>
+
+        <br>
+        <br>
+
+        <input type="submit" value="Отправить">
+        <button type="submit">Кнопка отправить</button>
+    </form>
+    <p>
+        В формах есть ряд тегов:
+    <ul>
+        <li>action - тег с адресом программы, которая будет обрабатывать форму после отправки</li>
+        <li>method - get или post - сообщает серверу о методе запроса</li>
+        <ul>
+            <li>get - передача через url (адресные строки)</li>
+            <li>post - метод скрытой отправки данных.</li>
+        </ul>
+        <li>imput - тег поля ввода, одиночный</li>
+        <ul>
+            <li>type - тип вводимых данных. test, password (закрывает вводимый текст звездочками)</li>
+            <li>name - имя для понимания браузером, что мы ввели</li>
+        </ul>
+        <li>label - парный тег, выводит на экран необходимый текст. Есть два варианта оформление, либо вписать в него
+            imput, либо через атрибут for, которому присваивается значение уникального id.</li>
+        <li>br - тег для создания пустой строки, временное решение пока мы не знаем разметки и CSS</li>
+        <li>submit - атрибут от input, для отправки формы, чтобы изменить его имя, добавляем его атрибут - value</li>
+        <li>value - может работать во всех типах imput, вводя в те окна значения по умолчанию</li>
+        <li>button - парный тег отправки, отличий со способом отправки через imput нет, преиммущество парного тега -
+            возможность сложной стилизации</li>
+    </ul>
+    Отправить форму так же можно и без дополнительных тегов, используя - enter.
+    </p>
+
+    <h2>Формы №2</h2>
+    <form>
+        <label>
+            ФИО
+            <input type="" name="fio" placeholder="Иванов Иван Иванович">
+        </label>
+
+        <br>
+        <br>
+
+        <label>
+            Возвраст
+            <input type="number" name="age">
+        </label>
+
+        <br>
+        <br>
+
+        <label>
+            Email
+            <input type="email" name="email">
+        </label>
+
+        <br>
+        <br>
+
+        <fieldset>
+            <legend>Пол:</legend>
+            <label>
+                муж
+                <input type="radio" name="sex" value="nam" checked>
+            </label>
+            <label>
+                жен
+                <input type="radio" name="sex" value="wonam">
+            </label>
+        </fieldset>
+
+        <br>
+        <br>
+
+        <select name="place">
+            <option value="1">Ресторан 1</option>
+            <option value="2">Ресторан 2</option>
+            <option value="3">Ресторан 3</option>
+        </select>
+
+        <br>
+        <br>
+
+        <fieldset>
+            <legend>Что понравилось:</legend>
+            <lable>
+                <input type="checkbox" name="fav" value="place">Место
+                <input type="checkbox" name="fav" value="people">Люди
+                <input type="checkbox" name="fav" value="food">Еда
+            </lable>
+        </fieldset>
+
+        <br>
+        <br>
+
+        <textarea name="comment" placeholder="Комментарий" cols="100" rows="10"></textarea>
+
+        <br>
+        <br>
+
+        <input type="file" name="bill" value="">
+
+        <br>
+        <br>
+
+        <button type=" submit">Отправить</button>
+    </form>
+    <p>
+        Новые теги:
+    <ul>
+        <li>placeholder - подсказка в виде примера заполнения графы</li>
+        <li>type = number - принимает в себя только числа</li>
+        <li>type = email - принимает на вход только корректные адресса почты</li>
+        <li>type = radio - радиокнопки, в виде окошка, которое модно раскрыть или свернуть, указав для них одинаковые
+            именамы можем выбрать только одно значение</li>
+        <li>checked - атрибут, устанавливающий значение по умолчанию</li>
+        <li>fieldset - тег для обьединения нескольких label</li>
+        <li>legend - тег для создания общего заголовка в блоке - fieldset</li>
+        <li>select - тег для создания окна выбора</li>
+        <li>option - тег для записи вариантов внутри select</li>
+        <li>multiple - атрибут, позволяющий сделать несколько вариантов выбора в select</li>
+        <li>input type="checkbox" - создает меню с возможностью поставить галочки в ячейки</li>
+        <li>textarea - парный тег, необходимый для многострочных текстов</li>
+        <li>type = "file" - позволяет нам загружать файлы на сайт</li>
+    </ul>
+    </p>
+
+    <h2>Разметка страницы</h2>
+
+    <header>
+        <a href="#">
+            <img src="" alt="Логотип">
+        </a>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Меню 1</a></li>
+            <li><a href="#">Меню 2</a></li>
+            <li><a href="#">Меню 3</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <aside>
+            <ul>
+                <li><a href="#">Внутреннее меню 1</a></li>
+                <li><a href="#">Внутреннее меню 2</a></li>
+                <li><a href="#">Внутреннее меню 3</a></li>
+            </ul>
+        </aside>
+
+        <section>
+            <h1>Каталог</h1>
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="" alt="Картинка">
+                        <p>Товар</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt="Картинка">
+                        <p>Товар</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt="Картинка">
+                        <p>Товар</p>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Почему мы?</h2>
+            <ul>
+                <li>
+                    <p>Текст</p>
+                </li>
+                <li>
+                    <p>Текст</p>
+                </li>
+                <li>
+                    <p>Текст</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <ul>
+            <li><a href="#">Ссылки 1</a></li>
+            <li><a href="#">Ссылки 2</a></li>
+            <li><a href="#">Ссылки 3</a></li>
+        </ul>
+        <p>
+            Копирайт
+        </p>
+    </footer>
+
+    <p>
+        Новые теги:
+    <ul>
+        <li>header - шапка сайта</li>
+        <li>nav - тег основной навигации</li>
+        <li>main - основное содержание страницы</li>
+        <li>aside - боковое меню</li>
+        <li>section - тег для внутренней разметки</li>
+        <li>footer - подвал сайта, как правило содержит доп ссылки или дублиркет шапку</li>
+    </ul>
+    Обернули логотип в тег ссылки а, так как обычно клик по логотипу ведет на главную страницу.
+    </p>
+
 </body>
 
 </html>
